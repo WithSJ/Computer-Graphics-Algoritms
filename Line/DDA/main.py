@@ -6,11 +6,11 @@ win = GraphWin(title="DDA algo",width=500,height=500)
 def line(x1,y1,x2,y2):
 
     #calculate change in x and y
-    dx = x2-x1 
+    dx = x2-x1
     dy = y2-y1
     
     #steps is equal to greater change
-    steps = dx if dx>dy else dy
+    steps = abs(dx) if abs(dx)>abs(dy) else abs(dy)
 
     # how much should incress values in x and y
     xinc = dx/steps
@@ -22,6 +22,7 @@ def line(x1,y1,x2,y2):
         y1 = y1+yinc
 
         point = Point(int(x1),int(y1))
+        print(int(x1),int(y1))
         point.draw(win)
 
 def run():
@@ -32,7 +33,8 @@ def run():
 
     line(int(start_point.x),int(start_point.y),int(end_point.x),int(end_point.y))
 
-run()
+while True:
+    run()
 
 print("Click on screen for exit")
 win.getMouse()
