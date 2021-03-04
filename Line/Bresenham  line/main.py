@@ -1,7 +1,7 @@
 from graphics import *
 from time import sleep
 
-win = GraphWin(title="DDA algo",width=500,height=500)
+win = GraphWin(title="Bresenham's algo",width=500,height=500)
 def line(x1,y1,x2,y2):
 
     #calculate change in x and y
