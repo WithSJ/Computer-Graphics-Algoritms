@@ -8,10 +8,7 @@ def line(x1,y1,x2,y2):
     dx = x2-x1
     dy = y2-y1
 
-    m = dy/dx #slop of line
-    print(m)
-    
-    if m <= 1:
+    if abs(dx)>abs(dy):
         p = 2*dy - dx
         while(x1<=x2):
             point = Point(x1,y1)
@@ -23,7 +20,7 @@ def line(x1,y1,x2,y2):
             else:
                 p = p + 2*dy-2*dx
                 y1 += 1
-    elif m >= 1:
+    else:
         p = 2*dx - dy
         while(y1<=y2):
             point = Point(x1,y1)
